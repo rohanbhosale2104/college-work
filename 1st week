@@ -1,0 +1,10 @@
+# college-work
+week 1:
+#1.count digits
+def digitcount(num):
+    
+    x=len(str(num))
+    print("the digit present in the number",x)
+    
+digitcount(214)
+#output:3
