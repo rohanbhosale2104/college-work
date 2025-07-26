@@ -1,0 +1,38 @@
+import numpy as np
+def MinMax(arr,i,j):  
+    if i==j:
+        #both equal
+        max_elmnt=arr[i]
+        min_elmnt=arr[i]
+        return max_elmnt,min_elmnt
+    elif i+j==1:
+        
+        if arr[i]>arr[j]:
+            max_elmnt=arr[i]
+            min_elmnt=arr[j]
+        else:
+            max_elmnt=arr[j]
+            min_elmnt=arr[i]
+        return max_elmnt,min_elmnt
+    else:
+        mid=(i+j)//2
+        #for left side
+        max1,min1=MinMax(arr,i,mid)
+        
+        #for right side
+        max2,min2=MinMax(arr,mid+1,j)
+        #by combining both of them
+        full_arr_max=max(max1,max2)
+        full_arr_min=min(min1,min2)
+        return full_arr_max,full_arr_min
+arr=np.array([12,34,54,32,45,65])
+i=0
+j=arr.size-1
+arr.sort()
+print(arr)
+maximum_frm_arr,minumum_frm_arr=MinMax(arr,i,j)
+print(f"the maximum element from array {maximum_frm_arr} and minimun element {minumum_frm_arr}")
+#output:[12 32 34 45 54 65]
+the maximum element from array 65 and minimun element 12
+        
+        
