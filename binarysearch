@@ -1,0 +1,24 @@
+
+import numpy as np
+def binarySearch():
+    
+    arr=np.array([12,23,21,23,45,34])
+    start=0
+    target=int(input("enter a target:"))
+    end=arr.size
+    mid=0
+    arr.sort()
+    print(arr)
+    while(start<=end):
+        mid=(start+end)//2
+        if(target==arr[mid]):
+            print(f"the element is present at {mid}")
+            return
+        elif(target>arr[mid]):
+            start=mid+1
+        else:
+            end=mid-1            
+binarySearch()
+#output:enter a target:12
+[12 21 23 23 34 45]
+the element is present at 0
