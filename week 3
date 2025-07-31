@@ -1,0 +1,51 @@
+#1.given string s,find non repaeating character and return index of that character else return -1
+def first_unique_char(s):
+    for i in range(len(s)):
+        if s.count(s[i]) == 1:
+            return i
+    return -1  # If no unique character found
+
+# Example usage
+s = "loveleetcode"
+print(first_unique_char(s))  # Output: 2 (character 'v')
+#output:
+2
+
+#2.implement a basic string compression using the count of repeating characters.only return the compressed string if its shorter that original
+s="aabcccccaaa"
+previous=s[0]
+output=""
+c=1 #count
+i=1 #starts from the 1st index
+while(i<len(s)):
+    if s[i]==previous:
+        c+=1
+    else:
+        output=output+previous+str(c)
+        previous=s[i]
+        c=1
+    i+=1
+#for last elements to calculate 
+output = output + previous + str(c)
+print(output)
+#output:
+a2b1c5a3
+
+#3.check if given string can be formed by repeating  substring multiple times
+def is_repeated_substring(s):
+    return (s+s)[1:-1].find(s)!=-1
+print(is_repeated_substring("abab"))       
+#output:True
+
+#4.given a string return all characters that appears more than once
+s="programming"
+seen=set()
+repeated=set()
+for ch in s:
+    if ch in seen:
+        repeated.add(ch)
+    else:
+        seen.add(ch)
+print(" ".join(repeated)," ")
+#output:
+r g m
