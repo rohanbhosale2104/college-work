@@ -1,13 +1,11 @@
 #1.given string s,find non repaeating character and return index of that character else return -1
 def first_unique_char(s):
     for i in range(len(s)):
-        if s.count(s[i]) == 1:
+        if s.count(s[i])==1:
             return i
-    return -1  # If no unique character found
-
-# Example usage
+    return -1 
 s = "loveleetcode"
-print(first_unique_char(s))  # Output: 2 (character 'v')
+print(first_unique_char(s)) 
 #output:
 2
 
